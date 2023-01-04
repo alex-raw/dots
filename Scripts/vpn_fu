@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+if [ -n $(ifconfig | grep tun) ]; then
+  pass fu-berlin.de | sudo openconnect -u alexanderrau --passwd-on-stdin vpn.fu-berlin.de
+else
+  echo "already connected"
+fi

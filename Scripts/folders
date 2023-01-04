@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+dir=$(fd -td -d4 . "$HOME/Data" -E "*RECYCLE*" | rofi -i -dmenu)
+
+[ ! -d "$dir" ] && exit 0
+$TERMINAL --directory "$dir" -e vifm

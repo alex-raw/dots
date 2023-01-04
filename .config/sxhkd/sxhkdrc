@@ -1,0 +1,133 @@
+super {a-q}
+	{a, \
+	 brave --new-window, \
+	 leftwm-command "CloseWindow", \
+	 rofi -show drun -show-icons, \
+	 $TERMINAL -1, \
+	 firefox --new-window, \
+	 g, \
+	 h, \
+	 unicode ipa, \
+	 leftwm-command "FocusWindowDown", \
+	 leftwm-command "FocusWindowUp", \
+	 literature, \
+	 dmenumount, \
+	 n, \
+	 folders, \
+	 brave --incognito, \
+	 q
+	 }
+
+F9
+	 rofi -show drun -show-icons
+
+super {r-z}
+	 {rambox, \
+	  signal-desktop, \
+	  thunderbird, \
+	  dmenuunmount, \
+	  $TERMINAL -1 --class filebrowser -e vifmrun, \
+	  w, \
+	  x, \
+	  y, \
+	  z}
+
+super {A-E}
+	{A, \
+     B, \
+	 xdo kill, \
+     rofi -show run, \
+	 unicode emoji}
+
+super F
+    leftwm-command {"TileToFloating", "FloatingToTile"}
+
+super {G-Z}
+	 {G, \
+	 H, \
+	 I, \
+	 leftwm-command "MoveWindowDown", \
+	 leftwm-command "MoveWindowUp", \
+	 L, \
+	 M, \
+	 N, \
+	 find_web, \
+	 passmenu, \
+	 Q, \
+	 leftwm-command "ToggleScratchPad rechner", \
+	 configedit, \
+	 $TERMINAL -1 --class notes -e bash -c "sleep 0.03 && nvim $HOME/Nextcloud/vimwiki/index.md", \
+	 U, \
+	 V, \
+	 W, \
+	 X, \
+	 Y, \
+	 Z}
+
+super {udiaeresis, underscore}
+	gsimplecal
+super odiaeresis
+	$TERMINAL -1
+super {adiaeresis, apostrophe}
+	leftwm-command "ToggleScratchPad terminal"
+
+super ctrl r
+    leftwm-command "SoftReload"
+
+super Tab
+	leftwm-command "NextLayout"
+super Return
+    leftwm-command "MoveWindowTop"
+
+super + {comma,period}
+	leftwm-command {FocusWorkspaceNext, FocusWorkspacePrevious}
+super + shift + {comma,period}
+	leftwm-command {MoveWindowToNextWorkspace, MoveWindowToLastWorkspace}
+
+# super + {1-9}
+# 	leftwm-command \"GotoTag {1-9}\"
+super + shift + {1-9}
+	nop
+# super + {plus, minus}
+# 	leftwm-command {"IncreaseMainWidth 5", "DecreaseMainWidth 5"}
+
+# Extra keys
+super + F8
+    projects
+super + F11
+	leftwm-command "ToggleFullScreen"
+
+# Special keys
+super button2
+	leftwm-command "CloseWindow"
+Print
+	maim -s "screenshot_$(date +"%Y-%m-%d-%H:%M").png"
+super + Print
+    maim -i $(xdotool getactivewindow) "screenshot_$(date +"%Y-%m-%d-%H:%M").png"
+{XF86AudioRaiseVolume, XF86AudioLowerVolume}
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}10%
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+{XF86AudioNext, XF86AudioPrev, XF86AudioPlay}
+	mpc {next, prev, toggle}
+XF86Launch7
+	pactl set-source-mute alsa_input.usb-Focusrite_Scarlett_4i4_USB_D88T6CF151AE2A-00.multichannel-input toggle & paplay $HOME/Scripts/src/clearly-602.ogg
+
+F1
+    echo "alexander.rauhut@fu-berlin.de" | xclip -selection clipboard && sleep 0.1 && xdotool key ctrl+v
+F2
+    echo "alexanderrauhutjs@gmail.com" | xclip -selection clipboard && sleep 0.1 && xdotool key ctrl+v
+
+# Bind super and control to extra mouse buttons
+button9
+    xte "keydown Super_R"
+super @button9
+    xte "keyup Super_R"
+button8
+    xte "keydown Control_R"
+control @button8
+    xte "keyup Control_R"
+
+# Laptop
+{XF86MonBrightnessUp, XF86MonBrightnessDown}
+	xbacklight -inc {-}7

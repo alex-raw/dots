@@ -1,0 +1,17 @@
+add_newline = false
+right_format = """$all"""
+format = """$directory$character"""
+
+[directory]
+truncation_length = 2
+truncate_to_repo = true
+
+[time]
+disabled = false
+
+[rlang]
+detect_folders = ["R"]
+detect_files = [""]
+
+# [line_break]
+# disabled = true

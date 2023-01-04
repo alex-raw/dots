@@ -1,0 +1,48 @@
+alias vim='nvim'
+
+# default flags
+alias clear='clear -x'
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'
+alias ls='ls --color=auto'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -I'
+alias R='R --quiet'
+alias rg='rg -L -g '!R' -g '!Data/Games' -g '!USB''
+alias cqp='/usr/local/bin/cqp -e'
+
+alias hi='himalaya-rel'
+alias fu='himalaya -a fu'
+alias gmail='himalaya -a gmail'
+
+# abbr
+alias k='killall'
+alias tl='tldr'
+alias ...='../..'
+alias ....='../../..'
+
+# updates
+alias clean='sudo pacman -Rns $(pacman -Qqtd)'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+alias l='exa -l --group-directories-first --no-permissions --no-user --icons'
+alias la='exa -la --group-directories-first --icons'
+alias fm='vifmrun'
+alias h='history 1 | rg'
+alias bib='nvim ~/Nextcloud/templates/uni.bib'
+alias ergo='ls -t $HOME | grep -m1 "ergo.*hex" | xargs wally-cli && sleep 3 && remaps'
+
+pullfu() { scp alexanderrau@login.fu-berlin.de:"~/$1" ; }
+pushfu() { scp $1 alexanderrau@login.fu-berlin.de:"~/" ; }
+alias tolino='sudo rsync -ru --progress --stats --delete -- ~/Nextcloud/Literature/ /run/media/alexraw/tolino/Books/Papers'
+
+# remove?
+alias wtr='curl wttr.in/Jena'
+alias wtr2='curl v2.wttr.in/Jena'
+alias ht='(head; tail) <'
+
+alias cqp='/usr/local/cwb-3.4.30/bin/cqp -eC'
+
+alias nsxiv='nsxiv -a'
+alias neorg='vim "+Neorg workspace home"'

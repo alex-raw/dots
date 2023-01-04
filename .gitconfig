@@ -1,0 +1,18 @@
+[user]
+	email = alexraw@mailbox.org
+	name = Alexander Rauhut
+
+[core]
+	editor = nvim
+[credential]
+	helper = /usr/bin/pass-git-helper
+[init]
+	defaultBranch = main
+[safe]
+	directory = /home/alexraw/Data/Projects/vim-cqp
+	directory = /home/alexraw/Data/Projects/Gutenberg
+	directory = /home/alexraw/Data/Projects/gutencorp
+	directory = /home/alexraw/Data/Projects/collapse
+	directory = /home/alexraw/Data/Projects/swoleR
+	directory = /home/alexraw/Data/Projects/Lebenslauf
+	directory = /home/alexraw/Data/Projects/adventofcode_2022

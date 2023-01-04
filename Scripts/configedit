@@ -1,0 +1,57 @@
+#!/usr/bin/env sh
+
+EDIT() { $TERMINAL -e zsh -c "sleep 0.03 && nvim $file" ;}
+SCRIPTS() { input=$(ls ~/Scripts | dmenu -i -p 'Edit script:')  ;}
+
+choices="\
+scripts
+sxhkd
+spectrwm
+bookmarks
+programs
+vim
+alacritty
+kitty
+zsh
+aliasrc
+mutt
+himalaya
+polybar
+vifm
+zprofile
+xinit
+picom
+bash
+xmonad
+bspwm
+leftwm
+"
+
+chosen=$(echo  "$choices"| dmenu -i -p 'Edit config:')
+
+case "$chosen" in
+	bash) file="$HOME/.bashrc" ;;
+	zsh) file="$HOME/.zshrc" ;;
+	aliasrc) file="$HOME/.config/aliasrc" ;;
+	kitty) file="$HOME/.config/kitty/kitty.conf" ;;
+	zprofile) file="$HOME/.zprofile" ;;
+	xinit) file="$HOME/.xinitrc" ;;
+	bspwm) file="$HOME/.config/bspwm/bspwmrc" ;;
+	sxhkd) file="$HOME/.config/sxhkd/sxhkdrc" ;;
+	vim) file="$HOME/.config/nvim/init.vim" ;;
+	vifm) file="$HOME/.config/vifm/vifmrc" ;;
+	picom) file="$HOME/.config/picom/picom.conf" ;;
+	programs) file="$HOME/Nextcloud/minimal_install.sh" ;;
+	bookmarks) file="$HOME/Nextcloud/bookmarks.csv" ;;
+	mutt) file="$HOME/.config/mutt/muttrc" ;;
+	himalaya) file="$HOME/.config/himalaya/config.toml" ;;
+	polybar) file="$HOME/.config/polybar/config" ;;
+	alacritty) file="$HOME/.config/alacritty/alacritty.yml" ;;
+	xmonad) file="$HOME/.xmonad/xmonad.hs" ;;
+	spectrwm) file="$HOME/.spectrwm.conf" ;;
+	leftwm) file="$HOME/.config/leftwm/config.toml" ;;
+
+	scripts) SCRIPTS && file=$(ls -d ~/Scripts/* | grep "$input") ;;
+esac
+
+[ -z $file] || EDIT

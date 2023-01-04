@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+if [ $HOSTNAME = 'rawmini' ]; then
+  touchpad &
+  xautolock -time 10 -locker blurlock &
+fi
+
+[[ ! $(pidof -x sxhkd) ]] && sxhkd &
+
+sh /home/alexraw/.screenlayout/full.sh
+wallpapers
+polybar_launch &
+
+leftwm-command "LoadTheme ~/.config/leftwm/themes/current/theme.toml"
+
+dbus-update-activation-environment DISPLAY XAUTHORITY WAYLAND_DISPLAY
+dbus-update-activation-environment --all

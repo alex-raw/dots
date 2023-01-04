@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+dir1=$(find $HOME/Performance -maxdepth 1 -type d,l | tail +2 2>/dev/null)
+dir2=$(find $HOME/Data/Projects -maxdepth 1 -type d,l | tail +2 2>/dev/null)
+
+working_dir=$(echo $dir1 $dir2 | sed 's/ /\n/g' | rofi -i -dmenu)
+
+[ ! -d "$working_dir" ] && exit 0
+$TERMINAL --directory "$working_dir"

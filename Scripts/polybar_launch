@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+if [ -z "$(pgrep -a polybar)" ]; then
+  polybar --reload leftbar -c ~/.config/polybar/config #&
+else
+  killall -q polybar
+fi
