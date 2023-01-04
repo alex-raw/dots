@@ -1,0 +1,4 @@
+.ssh/*
+.gpg/*
+.password-store/*
+.config/himalaya/*
