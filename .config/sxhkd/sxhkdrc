@@ -104,10 +104,10 @@ Print
 	maim -s "screenshot_$(date +"%Y-%m-%d-%H:%M").png"
 super + Print
     maim -i $(xdotool getactivewindow) "screenshot_$(date +"%Y-%m-%d-%H:%M").png"
-{XF86AudioRaiseVolume, XF86AudioLowerVolume}
-	pactl set-sink-volume @DEFAULT_SINK@ {+,-}10%
-XF86AudioMute
-	pactl set-sink-mute @DEFAULT_SINK@ toggle
+# {XF86AudioRaiseVolume, XF86AudioLowerVolume}
+# 	pactl set-sink-volume @DEFAULT_SINK@ {+,-}10%
+# XF86AudioMute
+# 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 {XF86AudioNext, XF86AudioPrev, XF86AudioPlay}
 	mpc {next, prev, toggle}
 XF86Launch7

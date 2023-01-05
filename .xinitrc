@@ -9,6 +9,7 @@ xsetroot -cursor_name left_ptr &
 udiskie &
 dunst &
 nm-applet &
+volumeicon &
 redshift &
 unclutter &
 remaps
