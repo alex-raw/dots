@@ -49,7 +49,7 @@
     ],
     window_rules: [
         (window_class: "droidcam", window_title: None, spawn_on_tag: None, spawn_floating: true),
-        (window_class: "gsimplecal", window_title: None, spawn_on_tag: None, spawn_floating: true),
+        (window_class: "Gsimplecal", window_title: None, spawn_on_tag: None, spawn_floating: true),
         (window_class: "Arandr", window_title: None, spawn_on_tag: None, spawn_floating: true),
         (window_class: "Pavucontrol", window_title: None, spawn_on_tag: None, spawn_floating: true),
     ],
