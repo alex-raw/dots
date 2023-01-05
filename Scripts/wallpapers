@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-if [ $HOSTNAME = 'rawpower' ]; then
-  xwallpaper \
-    --output DisplayPort-0 --zoom /home/alexraw/Pictures/Wallpapers/deer.jpg \
-    --output HDMI-A-1 --zoom /home/alexraw/Pictures/Wallpapers/owl.png
-  exit 0
-fi
-
 if [ $HOSTNAME = 'rawmini' ]; then
   xwallpaper \
       --output eDP1 --zoom /home/alexraw/Pictures/af084a86dcd5e23d2d3b7e9c2cbd294c4646.png
@@ -18,3 +11,11 @@ if [ $HOSTNAME = 'rawptop' ]; then
       --output eDP --zoom $HOME/Pictures/background
   exit 0
 fi
+
+xwallpaper \
+  --output DisplayPort-0 --zoom /home/alexraw/Pictures/Wallpapers/deer.jpg \
+  --output HDMI-A-1 --zoom /home/alexraw/Pictures/Wallpapers/owl.png
+  # --output HDMI-A-0 --zoom /home/alexraw/Pictures/Wallpapers/fox.png
+  # --output HDMI-A-0 --zoom /home/alexraw/Pictures/Wallpapers/owl.png
+# /home/alexraw/Pictures/Wallpapers/fox.png \
+

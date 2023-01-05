@@ -102,7 +102,7 @@ tray-background = ${colors.background}
 ############## Layout ####################################################################################
 
 monitor = HDMI-A-0
-monitor-fallback = eDP1
+monitor-fallback = eDP
 modules-left = ewmh
 modules-center = pulseaudio-microphone date volume
 modules-right =
@@ -114,9 +114,10 @@ inherit = bar/mainbar-spectrwm
 tray-position = right
 bottom = true
 
-modules-right = fs_root fs_hdd arch-updates aur-updates weather
+# modules-left = cpu1 memory1 himalaya vpn xwindow
+modules-left = cpu1 memory1 himalaya vpn
 modules-center = pulseaudio-microphone ewmh date volume
-modules-left = himalaya battery memory1 vpn cpu1 xwindow
+modules-right = fs_root fs_hdd arch-updates aur-updates weather
 
 font-0 = "Noto Sans:size=14;0"
 font-1 = "FontAwesome:size=14;0"
@@ -219,8 +220,8 @@ bar-empty = ─
 [module/battery]
 ;https://github.com/jaagr/polybar/wiki/Module:-battery
 type = internal/battery
-battery = BAT0
-adapter = AC0
+battery = CMB0
+adapter = ADP1
 full-at = 100
 
 format-charging = <animation-charging> <label-charging>
@@ -285,7 +286,7 @@ format-padding = 2
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
 label-font = 3
-label = Cpu %percentage:3%%
+label = %percentage:3%%
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 3
 ramp-coreload-0-foreground = #aaff77

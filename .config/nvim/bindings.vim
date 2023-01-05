@@ -11,8 +11,12 @@ nor ^ "
 " weird ergodox ez bug with quick key presses
 im ~⅞ ~/
 
-no j r| no r gk
-no k n| no n gj
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "rawpower"
+    no j r| no r gk
+    no k n| no n gj
+endif
+
 no L $
 no H ^
 
@@ -95,8 +99,8 @@ nn <leader>f <cmd>Telescope find_files<cr>
 nn <leader>g <cmd>Telescope live_grep<cr>
 nn <leader>b <cmd>Telescope buffers<cr>
 nn <leader>? <cmd>Telescope oldfiles<cr>
+" nn <leader>df <cmd>lua require'telescope.builtin'.find_files({cwd = "~/.config"})<cr>
 nn <leader>s <cmd>Telescope spell_suggest<cr>
-nn <leader>y <cmd>Telescope yadm_files<cr>
 
 nn <M-w> :ArgWrap<cr>
 nn <M-f> :Neoformat<cr>

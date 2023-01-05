@@ -12,7 +12,7 @@ super {a-q}
 	 leftwm-command "FocusWindowUp", \
 	 literature, \
 	 dmenumount, \
-	 n, \
+	 brave --incognito, \
 	 folders, \
 	 brave --incognito, \
 	 q
