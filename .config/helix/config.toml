@@ -1,0 +1,15 @@
+theme = "catppuccin_frappe"
+
+[editor]
+line-number = "relative"
+
+[keys.normal]
+# n = "move_line_down"
+# r = "move_line_up"
+# j = "replace"
+# k = "search_next"
+esc = ["collapse_selection", "keep_primary_selection"]
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"

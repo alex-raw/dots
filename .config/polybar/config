@@ -59,7 +59,7 @@ height = 30
 radius = 0.0
 fixed-center = true
 bottom = true
-separator = |
+# separator = |
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -412,10 +412,9 @@ label-occupied-underline= #f47676
 
 label-urgent = %name%
 label-urgent-foreground = ${colors.foreground}
-label-urgent-background = ${colors.alert}
+label-urgent-background = ${colors.background}
 label-urgent-underline = ${colors.alert}
 label-urgent-padding = 2
-
 
 label-empty = %name%
 label-empty-foreground = ${colors.foreground}

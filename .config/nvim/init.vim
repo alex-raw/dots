@@ -5,9 +5,7 @@ require("plugs.gitsigns")
 require("plugs.cmp")
 -- require("plugs.iron")
 require("plugs.autopairs")
--- require("plugs.neorg")
 -- require("plugs.snippets")
-require("plugs.telescope")
 require("treesitter")
 EOF
 
@@ -75,6 +73,7 @@ au BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 au BufRead,BufNewFile *vifmrc* set ft=vim
 au BufRead,BufNewFile neomutt* set ft=mail
 au BufRead,BufNewFile *.mail set ft=mail
+au BufRead,BufNewFile *.ron set ft=rust
 " au BufRead,BufNewFile *Rmd set ft=rmd
 au BufRead,BufNewFile *Rmd,rmd set ft=markdown
 
@@ -113,11 +112,7 @@ au FileType julia set shiftwidth=4 tabstop=4 softtabstop=4
 au FileType julia set textwidth=92 " according to Julia's CONTRIBUTING guidelines
 let g:latex_to_unicode_auto = 1
 
-" mouse
-set mouse=a
-nnoremap <RightMouse> <M-RightMouse>
-nnoremap <M-RightMouse> <RightMouse>
-nnoremap <C-LeftMouse> <LeftMouse>za
+set mousemodel=extend
 " Include mouse clicks in jump list
 nnoremap <LeftMouse> m'<LeftMouse>
 

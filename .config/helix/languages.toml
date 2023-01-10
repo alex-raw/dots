@@ -1,0 +1,16 @@
+[[language]]
+name = "julia"
+scope = "source.julia"
+injection-regex = "julia"
+file-types = ["jl"]
+roots = ["Project.toml", "Manifest.toml"]
+comment-token = "#"
+language-server = { command = "julia", args = [
+    "--startup-file=no",
+    "--history-file=no",
+    "--quiet",
+    "--project",
+    "-e",
+    "using LanguageServer; runserver()",
+    ] }
+indent = { tab-width = 4, unit = "    " }

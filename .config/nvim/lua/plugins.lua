@@ -78,7 +78,6 @@ require('packer').startup(function(use)
     -- Git
     use 'lewis6991/gitsigns.nvim'
     use 'TimUntersberger/neogit'
-    -- use 'folke/todo-comments.nvim'
 
     -- Language-specific
     use 'sheerun/vim-polyglot'
@@ -98,11 +97,9 @@ require('packer').startup(function(use)
     use 'jdelkins/vim-correction'
     use 'vim-scripts/ingo-library'
     use 'vim-scripts/SpellCheck'
-    -- use 'dvdsk/prosesitter.nvim'
 
     -- Apps
     use 'https://git.sr.ht/~soywod/himalaya-vim'
-    -- use 'vimwiki/vimwiki'
     use "nvim-neorg/neorg"
     -- use 'soywod/phonetics.vim'
     -- use 'alex-raw/vimling'
@@ -113,16 +110,12 @@ require('packer').startup(function(use)
     use 'j-hui/fidget.nvim'
     use 'RRethy/nvim-treesitter-endwise'
 
-
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
         require('packer').sync()
     end
 end)
-
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_transparent = true
 
 require('Comment').setup()
 
@@ -136,9 +129,6 @@ require('lualine').setup {
         lualine_z = {'branch'}
     },
 }
-
--- require('todo-comments').setup()
--- require("prosesitter"):setup()
 
 require("cmp_pandoc").setup({
     filetypes = { "markdown", "markdown.pandoc", "rmd", "rmarkdown", },
@@ -165,3 +155,11 @@ require("mason-lspconfig").setup()
 
 require("fidget").setup()
 
+require('telescope').setup({
+    defaults = {
+        file_ignore_patterns = {"undodir", "_book"},
+    }
+})
+
+require("telescope").load_extension("yadm_files")
+require("telescope").load_extension("git_or_yadm_files")
