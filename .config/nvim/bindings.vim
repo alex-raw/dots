@@ -11,8 +11,7 @@ nor ^ "
 " weird ergodox ez bug with quick key presses
 im ~⅞ ~/
 
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "rawpower"
+if $HOSTNAME == "rawpower"
     no j r| no r gk
     no k n| no n gj
 endif
@@ -101,6 +100,7 @@ nn <leader>b <cmd>Telescope buffers<cr>
 nn <leader>? <cmd>Telescope oldfiles<cr>
 " nn <leader>df <cmd>lua require'telescope.builtin'.find_files({cwd = "~/.config"})<cr>
 nn <leader>s <cmd>Telescope spell_suggest<cr>
+nn <leader>y <cmd>Telescope yadm_files<cr>
 
 nn <M-w> :ArgWrap<cr>
 nn <M-f> :Neoformat<cr>

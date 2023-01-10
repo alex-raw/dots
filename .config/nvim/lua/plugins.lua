@@ -104,12 +104,8 @@ require('packer').startup(function(use)
     -- use 'soywod/phonetics.vim'
     -- use 'alex-raw/vimling'
 
-    use "lukas-reineke/indent-blankline.nvim"
     use "williamboman/mason.nvim"
     use 'williamboman/mason-lspconfig.nvim'
-    use 'j-hui/fidget.nvim'
-    use 'RRethy/nvim-treesitter-endwise'
-
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
@@ -148,12 +144,8 @@ require('onenord').setup({
     },
 })
 
-require("indent_blankline").setup()
-
 require("mason").setup()
 require("mason-lspconfig").setup()
-
-require("fidget").setup()
 
 require('telescope').setup({
     defaults = {

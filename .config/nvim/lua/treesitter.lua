@@ -92,9 +92,6 @@ require("nvim-treesitter.configs").setup {
             },
         },
     },
-    endwise = {
-        enable = true,
-    },
     refactor = {
         highlight_definitions = {
             enable = true,
