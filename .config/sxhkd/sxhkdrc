@@ -1,4 +1,4 @@
-super {a-q}
+super {a-o}
 	{a, \
 	 brave --new-window, \
 	 leftwm-command "CloseWindow", \
@@ -12,19 +12,19 @@ super {a-q}
 	 leftwm-command "FocusWindowUp", \
 	 literature, \
 	 dmenumount, \
-	 n, \
-	 folders, \
 	 brave --incognito, \
-	 q
+	 folders, \
 	 }
 
-F9
-	 rofi -show drun -show-icons
+# super + p is broken or taken by leftwm
+super + p
+    brave --incognito
+
 
 super {r-z}
-	 {rambox, \
-	  signal-desktop, \
-	  thunderbird, \
+	 {r, \
+	  wmctrl -s 7 && signal-desktop, \
+	  wmctrl -s 8 && thunderbird, \
 	  dmenuunmount, \
 	  $TERMINAL -1 --class filebrowser -e vifmrun, \
 	  w, \

@@ -125,19 +125,19 @@ silent! map <unique> <localleader> <Plug>(operator-sandwich-add)
 silent! xmap <unique> <localleader>d <Plug>(operator-sandwich-delete)
 silent! xmap <unique> <localleader>r <Plug>(operator-sandwich-replace)
 
-" press <Tab> to expand or jump in a snippet. These can also be mapped separately
-" via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
-im <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-jump-next' : '<Tab>'
-snor <silent> <Tab> <cmd>lua require'luasnip'.jump(1)<cr>
-ino <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<cr>
-snor <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<cr>
+" " press <Tab> to expand or jump in a snippet. These can also be mapped separately
+" " via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
+" im <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-jump-next' : '<Tab>'
+" snor <silent> <Tab> <cmd>lua require'luasnip'.jump(1)<cr>
+" ino <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<cr>
+" snor <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<cr>
 
 " For changing choices in choiceNodes (not strictly necessary for a basic setup).
 im <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 
 " R
-au BufRead,BufNewFile *R,*r,*Rmd,*rmd call RBindings()
+au BufRead,BufNewFile *R,*r call RBindings()
 function RBindings()
     ino -- <space><-<space>
 

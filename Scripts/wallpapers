@@ -13,8 +13,8 @@ if [ $HOSTNAME = 'rawptop' ]; then
 fi
 
 xwallpaper \
-  --output DisplayPort-0 --zoom /home/alexraw/Pictures/Wallpapers/deer.jpg \
-  --output HDMI-A-1 --zoom /home/alexraw/Pictures/Wallpapers/owl.png
+  --output DP-0 --zoom /home/alexraw/Pictures/Wallpapers/deer.jpg \
+  --output HDMI-A-0 --zoom /home/alexraw/Pictures/Wallpapers/gustavsson_vertical.jpg
   # --output HDMI-A-0 --zoom /home/alexraw/Pictures/Wallpapers/fox.png
   # --output HDMI-A-0 --zoom /home/alexraw/Pictures/Wallpapers/owl.png
 # /home/alexraw/Pictures/Wallpapers/fox.png \

@@ -39,17 +39,28 @@ configs.r_language_server.setup {
     }
 }
 
-configs.sumneko_lua.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { "lua" },
-    settings = {
-        rich_documentation = false
-    }
-}
+-- configs.sumneko_lua.setup {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     filetypes = { "lua" },
+--     settings = {
+--         rich_documentation = false
+--     }
+-- }
 
 -- Enable the following language servers. If you ever find yourself needing another programming language support, you'll have to find its LSP, add it to this list and make sure it is installed in your system! We'll go through installing tsserver together for TypeScript support.
-local servers = { 'pyright', 'bashls', 'awk_ls', "luau_lsp" , "prosemd_lsp", "zk", "remark_ls", "marksman", "texlab", "ltex"}
+local servers = {
+    'pylsp',
+    'bashls',
+    'awk_ls',
+    "luau_lsp",
+    "prosemd_lsp",
+    "zk",
+    "remark_ls",
+    "marksman",
+    "texlab",
+    -- "ltex"
+}
 for _, lsp in ipairs(servers) do
     configs[lsp].setup {
         on_attach = on_attach,
@@ -99,11 +110,52 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 configs.julials.setup{
     on_attach = on_attach,
     capabilities = create_capabilities(),
-    on_new_config = function(new_config, _)
-        local julia = vim.fn.expand("~/.julia/environments/nvim-lspconfig/bin/julia")
-        if require'lspconfig'.util.path.is_file(julia) then
-            new_config.cmd[1] = julia
-        end
-    end
+    -- on_new_config = function(new_config, _)
+    --     local julia = vim.fn.expand("~/.julia/environments/nvim-lspconfig/bin/julia")
+    --     if require'lspconfig'.util.path.is_file(julia) then
+    --         new_config.cmd[1] = julia
+    --     end
+    -- end
 }
 
+
+configs.ltex.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  -- use_spellfile = false,
+  filetypes = { "latex", "tex", "bib", "markdown", "gitcommit", "text" },
+  settings = {
+    ltex = {
+      enabled = { "latex", "tex", "bib", "markdown", },
+      language = "auto",
+      -- diagnosticSeverity = "information",
+      -- sentenceCacheSize = 2000,
+      -- additionalRules = {
+      --   motherTongue = "de",
+      -- },
+      dictionary = (function()
+        -- For dictionary, search for files in the runtime to have
+        -- and include them as externals the format for them is
+        -- dict/{LANG}.txt
+        --
+        -- Also add dict/default.txt to all of them
+        local files = {}
+        for _, file in ipairs(vim.api.nvim_get_runtime_file("dict/*", true)) do
+          local lang = vim.fn.fnamemodify(file, ":t:r")
+          local fullpath = vim.fs.normalize(file, ":p")
+          files[lang] = { ":" .. fullpath }
+        end
+
+        if files.default then
+          for lang, _ in pairs(files) do
+            if lang ~= "default" then
+              vim.list_extend(files[lang], files.default)
+            end
+          end
+          files.default = nil
+        end
+        return files
+      end)(),
+    },
+  },
+}

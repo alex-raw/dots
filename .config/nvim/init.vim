@@ -3,10 +3,10 @@ require("plugins")
 require("lsp")
 require("plugs.gitsigns")
 require("plugs.cmp")
--- require("plugs.iron")
 require("plugs.autopairs")
--- require("plugs.snippets")
 require("treesitter")
+-- require("plugs.iron")
+-- require("plugs.snippets")
 EOF
 
 set updatetime=50
@@ -125,6 +125,8 @@ au FileType r,rmarkdown set shiftwidth=2 tabstop=2 softtabstop=2
 au FileType r hi link @parameter Special
 au FileType r hi link @namespace TSNamespace
 au FileType r hi clear Error
+
+let g:copilot_filetypes = {'markdown': v:true, 'rmarkdown': v:true}
 
 " nvimR
 let R_args = ["--quiet", "--no-save"]

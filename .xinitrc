@@ -21,10 +21,4 @@ unclutter &
 remaps
 picom --experimental-backends &
 
-cd ~/Data/Teaching/22ws_lexical_semantics/Website && watchexec -p -N \
-    --log-file ~/Data/Teaching/22ws_lexical_semantics/Website/log.log \
-    -i 21ss_LoLA_Rauhut.Rmd \
-    --exts draft,Rmd,yml \
-    make &
-
 exec leftwm

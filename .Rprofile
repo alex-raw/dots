@@ -13,6 +13,8 @@ options(repos = c(CRAN = "https://ftp.rrze.uni-erlangen.de/cran/")
 ,  pdfviewer = Sys.getenv("READER")
 ,  stringsAsFactors = FALSE
 ,  datatable.prettyprint.char = 15L
+,  datatable.print.topn = 10L
+,  datatable.print.class = TRUE
 ,  max.print = 500L
 
 ,  usethis.protocol  = "ssh"
@@ -39,14 +41,14 @@ suppressMessages({
   require(tinytest)
   require(parallel)
   require(data.table)
-  try(devtools::load_all(), silent = TRUE)
+  # try(devtools::load_all(), silent = TRUE)
 })
 
-setHook(
-  packageEvent("languageserver", "onLoad"),
-  \(...) {
-    try(devtools::load_all(), silent = TRUE)
-  }
-)
+# setHook(
+#   packageEvent("languageserver", "onLoad"),
+#   \(...) {
+#     try(devtools::load_all(), silent = TRUE)
+#   }
+# )
 
 q <- \(save = "no", ...) quit(save = save, ...)

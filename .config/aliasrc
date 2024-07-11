@@ -10,7 +10,7 @@ alias mv='mv -iv'
 alias rm='rm -I'
 alias R='R --quiet'
 alias rg='rg -L -g '!R' -g '!Data/Games' -g '!USB''
-alias cqp='/usr/local/bin/cqp -e'
+alias cqp='/usr/local/bin/cqp -eC'
 
 alias hi='himalaya-rel'
 alias fu='himalaya -a fu'
@@ -41,8 +41,6 @@ alias tolino='sudo rsync -ru --progress --stats --delete -- ~/Nextcloud/Literatu
 alias wtr='curl wttr.in/Jena'
 alias wtr2='curl v2.wttr.in/Jena'
 alias ht='(head; tail) <'
-
-alias cqp='/usr/local/cwb-3.4.30/bin/cqp -eC'
 
 alias nsxiv='nsxiv -a'
 alias neorg='vim "+Neorg workspace home"'

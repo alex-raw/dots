@@ -108,7 +108,7 @@ modules-center = pulseaudio-microphone date volume
 modules-right =
 
 [bar/leftbar]
-monitor = DisplayPort-0
+monitor = DP-0
 height = 30
 inherit = bar/mainbar-spectrwm
 tray-position = right

@@ -10,7 +10,7 @@ sh /home/alexraw/.screenlayout/full.sh
 wallpapers
 polybar_launch &
 
-leftwm-command "LoadTheme ~/.config/leftwm/themes/current/theme.ron"
+leftwm-command "LoadTheme /home/alexraw/.config/leftwm/themes/current/theme.ron"
 
 dbus-update-activation-environment DISPLAY XAUTHORITY WAYLAND_DISPLAY
 dbus-update-activation-environment --all

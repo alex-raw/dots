@@ -7,4 +7,3 @@ rsync -ruLh --delete --stats --size-only -- \
 	rawadmin@161.35.25.213:/var/www/alexraw.xyz \
         | tee /tmp/out
 notify-send "Website synced!"
-$((head -7; tail -0) < /tmp/out)

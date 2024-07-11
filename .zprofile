@@ -2,6 +2,7 @@ export HOSTNAME=$(cat /proc/sys/kernel/hostname)
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export PATH="/usr/local/cwb-3.4.30/bin:$PATH"
 export PATH="$HOME/Scripts:$PATH"
+export PATH="$HOME/perl5/:$PATH"
 
 export CORPUS_REGISTRY="$HOME/CWB/registry"
 
@@ -37,6 +38,9 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[1;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+
+export NLTK_DATA="$HOME/Corpora/nltk_data/"
 
 # [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
 [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -- vt1 &> /dev/null

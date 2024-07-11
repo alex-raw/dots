@@ -7,8 +7,10 @@ end
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
-    use 'neovim/nvim-lspconfig'
     use 'nathom/filetype.nvim'
+    use 'neovim/nvim-lspconfig'
+    use "williamboman/mason.nvim"
+    use 'williamboman/mason-lspconfig.nvim'
 
     -- Looky
     use 'romainl/vim-cool'
@@ -19,18 +21,19 @@ require('packer').startup(function(use)
     -- use 'catppuccin/vim'
     -- use 'EdenEast/nightfox.nvim'
 
+    use 'kyazdani42/nvim-web-devicons'
     use 'baskerville/vim-sxhkdrc'
     -- use { 'rrethy/vim-hexokinase', run = 'make hexokinase' }
-    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+    use 'nvim-lualine/lualine.nvim'
 
     -- Editing
     use 'vim-scripts/ReplaceWithRegister'
     use 'FooSoft/vim-argwrap'
     use 'machakann/vim-sandwich'
-    use 'sbdchd/neoformat'
     use 'numToStr/Comment.nvim'
     use 'windwp/nvim-autopairs'
     use 'junegunn/vim-easy-align'
+    -- use 'sbdchd/neoformat'
 
     use 'kana/vim-textobj-user'
     use 'kana/vim-textobj-line'
@@ -41,21 +44,10 @@ require('packer').startup(function(use)
     use 'ThePrimeagen/harpoon'
     use { 'nvim-telescope/telescope.nvim',
         requires = {
-            { 'kyazdani42/nvim-web-devicons' },
             { 'nvim-lua/popup.nvim' }
         }
     }
     use "pschmitt/telescope-yadm.nvim"
-
-    use {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
-        requires = {
-            "nvim-lua/plenary.nvim",
-            "kyazdani42/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
-        }
-    }
 
     -- Treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -64,7 +56,6 @@ require('packer').startup(function(use)
 
     -- -- Snippets
     use 'L3MON4D3/LuaSnip'
-    -- use 'rafamadriz/friendly-snippets'
 
     -- Autocompletion
     use 'hrsh7th/nvim-cmp'
@@ -74,6 +65,8 @@ require('packer').startup(function(use)
     use 'f3fora/cmp-spell'
     use 'aspeddro/cmp-pandoc.nvim'
     use 'saadparwaiz1/cmp_luasnip'
+
+    -- use 'github/copilot.vim'
 
     -- Git
     use 'lewis6991/gitsigns.nvim'
@@ -88,9 +81,9 @@ require('packer').startup(function(use)
 
     -- -- Writing
     -- use { 'vim-pandoc/vim-rmarkdown', requires = {
-    --     'vim-pandoc/vim-pandoc',
-    --     'vim-pandoc/vim-pandoc-syntax'
-    -- },
+    --         'vim-pandoc/vim-pandoc',
+    --         'vim-pandoc/vim-pandoc-syntax'
+    --     },
     -- }
 
     use 'vim-scripts/abolish.vim'
@@ -104,8 +97,6 @@ require('packer').startup(function(use)
     -- use 'soywod/phonetics.vim'
     -- use 'alex-raw/vimling'
 
-    use "williamboman/mason.nvim"
-    use 'williamboman/mason-lspconfig.nvim'
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
